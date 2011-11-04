@@ -3,7 +3,7 @@ from django.contrib import admin
 
 class IngredientInline(admin.StackedInline):
     model = Ingredient
-    extra = 6
+    extra = 3
 
 class RecipeAdmin(admin.ModelAdmin):
     fieldsets = [

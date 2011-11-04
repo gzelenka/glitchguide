@@ -1,8 +1,10 @@
 <h1> {{ recipe.product.name }} </h1>
+<p>Worth {{ recipe.product.worth }} currants.</p>
 <p>Combine the following ingredients in a {{ recipe.tool.name }} </h2>
 <ul>
 {% for ingredient in recipe.ingredient_set.all %}
-  <li>{{ ingredient.number }} of {{ ingredient.ingredient.name }}</li>
+  <li>{{ ingredient.number }} of <a href="/glitchguide/{{ ingredient.ingredient.getRecipe }}"> {{ ingredient.ingredient.name }}</a></li>
 {% endfor %}
 </ul>
 <p>Requires {{ recipe.cost }} {{ recipe.currency }} </p>
+<p>{{ recipe.printTotalCost }}</p>
